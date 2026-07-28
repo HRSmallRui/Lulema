@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://cqa8brjeav0fr"]
+[gd_scene format=3 uid="uid://b76sxoylclxbl"]
 
-[node name="Main" type="Control" unique_id=185957830]
+[node name="StatisticsMenu" type="Control" unique_id=567573133]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
