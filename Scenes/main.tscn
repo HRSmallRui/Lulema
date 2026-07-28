@@ -14,8 +14,10 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_jjvhh")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1866453354]
-layout_mode = 1
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=348798943]
+layer = -1
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1866453354]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
