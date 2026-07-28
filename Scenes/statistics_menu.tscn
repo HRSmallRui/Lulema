@@ -1,6 +1,21 @@
 [gd_scene format=3 uid="uid://b76sxoylclxbl"]
 
-[node name="StatisticsMenu" type="Control" unique_id=567573133]
+[sub_resource type="GDScript" id="GDScript_htemk"]
+script/source = "extends Control
+"
+
+[sub_resource type="StyleBoxFlat" id="card_style"]
+content_margin_left = 32.0
+content_margin_top = 28.0
+content_margin_right = 32.0
+content_margin_bottom = 28.0
+bg_color = Color(1, 1, 1, 0.92)
+corner_radius_top_left = 28
+corner_radius_top_right = 28
+corner_radius_bottom_right = 28
+corner_radius_bottom_left = 28
+
+[node name="StatisticsMenu" type="Control" unique_id=1399344487]
 custom_minimum_size = Vector2(1280, 2400)
 layout_mode = 3
 anchors_preset = 15
@@ -9,3 +24,175 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+script = SubResource("GDScript_htemk")
+
+[node name="Background" type="ColorRect" parent="." unique_id=1155276475]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.96, 0.94, 0.97, 1)
+
+[node name="VBox" type="VBoxContainer" parent="." unique_id=1998004285]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 60.0
+offset_top = 80.0
+offset_right = -60.0
+offset_bottom = -80.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 32
+
+[node name="TopSpacer" type="Control" parent="VBox" unique_id=1837788733]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+
+[node name="TitleLabel" type="Label" parent="VBox" unique_id=1831361794]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.22, 0.16, 0.3, 1)
+theme_override_font_sizes/font_size = 88
+text = "统计"
+horizontal_alignment = 1
+
+[node name="StatsGrid" type="GridContainer" parent="VBox" unique_id=368470334]
+layout_mode = 2
+theme_override_constants/h_separation = 24
+theme_override_constants/v_separation = 24
+columns = 2
+
+[node name="TotalCard" type="PanelContainer" parent="VBox/StatsGrid" unique_id=1920620778]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("card_style")
+
+[node name="VBox" type="VBoxContainer" parent="VBox/StatsGrid/TotalCard" unique_id=1024894938]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="TitleLabel" type="Label" parent="VBox/StatsGrid/TotalCard/VBox" unique_id=1686058764]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.45, 0.45, 0.5, 1)
+theme_override_font_sizes/font_size = 34
+text = "总打卡次数"
+horizontal_alignment = 1
+
+[node name="ValueLabel" type="Label" parent="VBox/StatsGrid/TotalCard/VBox" unique_id=1237425113]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.2, 0.55, 0.85, 1)
+theme_override_font_sizes/font_size = 96
+text = "0"
+horizontal_alignment = 1
+
+[node name="StreakCard" type="PanelContainer" parent="VBox/StatsGrid" unique_id=432681593]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("card_style")
+
+[node name="VBox" type="VBoxContainer" parent="VBox/StatsGrid/StreakCard" unique_id=2024984793]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="TitleLabel" type="Label" parent="VBox/StatsGrid/StreakCard/VBox" unique_id=998958059]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.45, 0.45, 0.5, 1)
+theme_override_font_sizes/font_size = 34
+text = "当前连续"
+horizontal_alignment = 1
+
+[node name="ValueLabel" type="Label" parent="VBox/StatsGrid/StreakCard/VBox" unique_id=1381632678]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.3, 0.7, 0.45, 1)
+theme_override_font_sizes/font_size = 96
+text = "0 天"
+horizontal_alignment = 1
+
+[node name="LongestCard" type="PanelContainer" parent="VBox/StatsGrid" unique_id=1908640685]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("card_style")
+
+[node name="VBox" type="VBoxContainer" parent="VBox/StatsGrid/LongestCard" unique_id=1323283009]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="TitleLabel" type="Label" parent="VBox/StatsGrid/LongestCard/VBox" unique_id=594937650]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.45, 0.45, 0.5, 1)
+theme_override_font_sizes/font_size = 34
+text = "最长连续"
+horizontal_alignment = 1
+
+[node name="ValueLabel" type="Label" parent="VBox/StatsGrid/LongestCard/VBox" unique_id=1223622346]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9, 0.55, 0.15, 1)
+theme_override_font_sizes/font_size = 96
+text = "0 天"
+horizontal_alignment = 1
+
+[node name="MonthCard" type="PanelContainer" parent="VBox/StatsGrid" unique_id=895706195]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("card_style")
+
+[node name="VBox" type="VBoxContainer" parent="VBox/StatsGrid/MonthCard" unique_id=1926457368]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="TitleLabel" type="Label" parent="VBox/StatsGrid/MonthCard/VBox" unique_id=1308702545]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.45, 0.45, 0.5, 1)
+theme_override_font_sizes/font_size = 34
+text = "本月打卡"
+horizontal_alignment = 1
+
+[node name="ValueLabel" type="Label" parent="VBox/StatsGrid/MonthCard/VBox" unique_id=1740710280]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.65, 0.45, 0.85, 1)
+theme_override_font_sizes/font_size = 96
+text = "0 次"
+horizontal_alignment = 1
+
+[node name="WeekCard" type="PanelContainer" parent="VBox" unique_id=516651425]
+layout_mode = 2
+theme_override_styles/panel = SubResource("card_style")
+
+[node name="HBox" type="HBoxContainer" parent="VBox/WeekCard" unique_id=92755724]
+layout_mode = 2
+theme_override_constants/separation = 24
+alignment = 1
+
+[node name="TitleLabel" type="Label" parent="VBox/WeekCard/HBox" unique_id=968109880]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.3, 0.3, 0.3, 1)
+theme_override_font_sizes/font_size = 40
+text = "本周打卡"
+
+[node name="ValueLabel" type="Label" parent="VBox/WeekCard/HBox" unique_id=794413715]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.3, 0.3, 0.3, 1)
+theme_override_font_sizes/font_size = 56
+text = "0 / 7"
+
+[node name="ChartTitle" type="Label" parent="VBox" unique_id=354981539]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.3, 0.3, 0.35, 1)
+theme_override_font_sizes/font_size = 42
+text = "最近 7 天"
+horizontal_alignment = 1
+
+[node name="ChartContainer" type="HBoxContainer" parent="VBox" unique_id=1460036886]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="BottomSpacer" type="Control" parent="VBox" unique_id=805264649]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2

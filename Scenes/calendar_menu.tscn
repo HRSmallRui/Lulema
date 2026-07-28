@@ -1,6 +1,10 @@
 [gd_scene format=3 uid="uid://c7oj3s3pt4mws"]
 
-[node name="CalendarMenu" type="Control" unique_id=1600915713]
+[sub_resource type="GDScript" id="GDScript_35u8f"]
+script/source = "extends Control
+"
+
+[node name="CalendarMenu" type="Control" unique_id=1579144087]
 custom_minimum_size = Vector2(1280, 2400)
 layout_mode = 3
 anchors_preset = 15
@@ -9,3 +13,140 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+script = SubResource("GDScript_35u8f")
+
+[node name="Background" type="ColorRect" parent="." unique_id=1541140397]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.94, 0.96, 0.98, 1)
+
+[node name="VBox" type="VBoxContainer" parent="." unique_id=1841895132]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 60.0
+offset_top = 80.0
+offset_right = -60.0
+offset_bottom = -80.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 32
+
+[node name="TopSpacer" type="Control" parent="VBox" unique_id=1932613608]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+
+[node name="TitleLabel" type="Label" parent="VBox" unique_id=1454570581]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.16, 0.2, 0.3, 1)
+theme_override_font_sizes/font_size = 88
+text = "日历"
+horizontal_alignment = 1
+
+[node name="MonthHeader" type="HBoxContainer" parent="VBox" unique_id=506748176]
+layout_mode = 2
+theme_override_constants/separation = 40
+alignment = 1
+
+[node name="PrevButton" type="Button" parent="VBox/MonthHeader" unique_id=349383153]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "‹"
+
+[node name="MonthLabel" type="Label" parent="VBox/MonthHeader" unique_id=1755417863]
+custom_minimum_size = Vector2(600, 100)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.2, 0.24, 0.32, 1)
+theme_override_font_sizes/font_size = 56
+text = "—"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NextButton" type="Button" parent="VBox/MonthHeader" unique_id=1339841199]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "›"
+
+[node name="WeekdayHeader" type="HBoxContainer" parent="VBox" unique_id=1481959606]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="D0" type="Label" parent="VBox/WeekdayHeader" unique_id=1734744719]
+custom_minimum_size = Vector2(150, 70)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8, 0.3, 0.3, 1)
+theme_override_font_sizes/font_size = 36
+text = "日"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="D1" type="Label" parent="VBox/WeekdayHeader" unique_id=1874213279]
+custom_minimum_size = Vector2(150, 70)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.3, 0.3, 0.3, 1)
+theme_override_font_sizes/font_size = 36
+text = "一"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="D2" type="Label" parent="VBox/WeekdayHeader" unique_id=1233417143]
+custom_minimum_size = Vector2(150, 70)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.3, 0.3, 0.3, 1)
+theme_override_font_sizes/font_size = 36
+text = "二"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="D3" type="Label" parent="VBox/WeekdayHeader" unique_id=313260875]
+custom_minimum_size = Vector2(150, 70)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.3, 0.3, 0.3, 1)
+theme_override_font_sizes/font_size = 36
+text = "三"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="D4" type="Label" parent="VBox/WeekdayHeader" unique_id=72371894]
+custom_minimum_size = Vector2(150, 70)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.3, 0.3, 0.3, 1)
+theme_override_font_sizes/font_size = 36
+text = "四"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="D5" type="Label" parent="VBox/WeekdayHeader" unique_id=1870616652]
+custom_minimum_size = Vector2(150, 70)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.3, 0.3, 0.3, 1)
+theme_override_font_sizes/font_size = 36
+text = "五"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="D6" type="Label" parent="VBox/WeekdayHeader" unique_id=1540559877]
+custom_minimum_size = Vector2(150, 70)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.3, 0.3, 0.3, 1)
+theme_override_font_sizes/font_size = 36
+text = "六"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Grid" type="GridContainer" parent="VBox" unique_id=274651306]
+layout_mode = 2
+theme_override_constants/h_separation = 8
+theme_override_constants/v_separation = 8
+columns = 7
+
+[node name="BottomSpacer" type="Control" parent="VBox" unique_id=1067648522]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
