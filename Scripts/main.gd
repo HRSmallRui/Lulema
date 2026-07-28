@@ -2,9 +2,11 @@ extends Control
 
 @onready var camera_2d: Camera2D = $Camera2D
 @onready var h_box_container: HBoxContainer = $HBoxContainer
+@onready var debug_label: Label = $DebugLabel
 
 var current_id: int = 1
 var move_tween: Tween
+var last_mouse_position: Vector2
 
 func _ready() -> void:
 	
@@ -20,15 +22,17 @@ func snap_to_component():
 
 
 func _input(event: InputEvent) -> void:
+	debug_label.text = str(current_id)
 	if event.is_action_pressed("click"):
 		if move_tween != null: move_tween.kill()
+		last_mouse_position = get_local_mouse_position()
 	elif event.is_action_released("click"):
 		if move_tween != null: move_tween.kill()
-		var mouse_velocity: Vector2 = Input.get_last_mouse_screen_velocity()
+		var mouse_velocity: Vector2 = get_local_mouse_position() - last_mouse_position
 		print(mouse_velocity.x)
-		if mouse_velocity.x > 100:
+		if mouse_velocity.x > 50:
 			current_id -= 1
-		elif mouse_velocity.x < -100:
+		elif mouse_velocity.x < -50:
 			current_id += 1
 		else:
 			var target_id: int = 0
