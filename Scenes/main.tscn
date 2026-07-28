@@ -30,7 +30,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 0
-scroll_horizontal = 100
 horizontal_scroll_mode = 3
 
 [node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer" unique_id=1599408977]
@@ -45,3 +44,5 @@ layout_mode = 2
 
 [node name="StatisticsMenu" parent="ScrollContainer/HBoxContainer" unique_id=567573133 instance=ExtResource("3_kry3j")]
 layout_mode = 2
+
+[connection signal="gui_input" from="ScrollContainer" to="." method="_on_scroll_container_gui_input"]
