@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="AppSaver" format=3 uid="uid://dn3i5e3ujjqjo"]
+
+[ext_resource type="Script" uid="uid://dk2w651pehmgv" path="res://Scripts/app_sav.gd" id="1_xtb56"]
+
+[resource]
+script = ExtResource("1_xtb56")
+metadata/_custom_type_script = "uid://dk2w651pehmgv"
