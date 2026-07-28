@@ -1,11 +1,15 @@
 extends Control
 
+@export var back_color_list: Array[Color]
+
 @onready var camera_2d: Camera2D = $Camera2D
 @onready var h_box_container: HBoxContainer = $HBoxContainer
 @onready var debug_label: Label = $DebugLabel
+@onready var color_rect: ColorRect = $CanvasLayer/ColorRect
 
 var current_id: int = 1
 var move_tween: Tween
+var color_tween: Tween
 var last_mouse_position: Vector2
 
 func _ready() -> void:
@@ -18,6 +22,9 @@ func snap_to_component():
 	var target_node: Control = h_box_container.get_child(current_id)
 	move_tween = create_tween()
 	move_tween.tween_property(camera_2d,"position:x",target_node.global_position.x,0.2)
+	if color_tween != null: color_tween.kill()
+	color_tween = create_tween()
+	color_tween.tween_property(color_rect,"modulate",back_color_list[current_id],0.2)
 	pass
 
 

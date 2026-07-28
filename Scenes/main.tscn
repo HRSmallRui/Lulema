@@ -13,6 +13,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_jjvhh")
+back_color_list = Array[Color]([Color(1, 1, 0.83137256, 1), Color(1, 1, 1, 1), Color(0.85490197, 1, 1, 1)])
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=348798943]
 layer = -1
