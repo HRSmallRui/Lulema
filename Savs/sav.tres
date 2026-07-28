@@ -1,5 +1,6 @@
 [gd_resource type="Resource" script_class="AppSaver" format=3 uid="uid://dn3i5e3ujjqjo"]
 
+[ext_resource type="Script" uid="uid://bgn5wotr7xidg" path="res://Scripts/date_struct.gd" id="1_b7gp0"]
 [ext_resource type="Script" uid="uid://dk2w651pehmgv" path="res://Scripts/app_sav.gd" id="1_xtb56"]
 
 [resource]
