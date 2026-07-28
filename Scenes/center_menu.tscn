@@ -1,5 +1,11 @@
 [gd_scene format=3 uid="uid://dul8abiefx5pf"]
 
+[ext_resource type="Texture2D" uid="uid://4golhcml2q8" path="res://Assets/Images/lulema_record.png" id="1_35u8f"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_14cdr"]
+atlas = ExtResource("1_35u8f")
+region = Rect2(190, 191, 1670, 1676)
+
 [node name="CenterMenu" type="Control" unique_id=241613675]
 custom_minimum_size = Vector2(1280, 2400)
 layout_mode = 3
@@ -8,3 +14,24 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=479294474]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="CenterContainer" unique_id=1279340502]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(526, 526)
+layout_mode = 2
+focus_mode = 0
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer/Button" unique_id=305746409]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.31359664, 0.31359664)
+texture = SubResource("AtlasTexture_14cdr")
