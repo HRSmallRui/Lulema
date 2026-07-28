@@ -22,27 +22,22 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=216818154]
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1221679569]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 0
-horizontal_scroll_mode = 3
 
-[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer" unique_id=1599408977]
-layout_mode = 2
-mouse_filter = 2
-
-[node name="CalendarMenu" parent="ScrollContainer/HBoxContainer" unique_id=1600915713 instance=ExtResource("1_8gbba")]
+[node name="CalendarMenu" parent="HBoxContainer" unique_id=1579144087 instance=ExtResource("1_8gbba")]
 layout_mode = 2
 
-[node name="CenterMenu" parent="ScrollContainer/HBoxContainer" unique_id=241613675 instance=ExtResource("2_jjvhh")]
+[node name="CenterMenu" parent="HBoxContainer" unique_id=534717266 instance=ExtResource("2_jjvhh")]
 layout_mode = 2
 
-[node name="StatisticsMenu" parent="ScrollContainer/HBoxContainer" unique_id=567573133 instance=ExtResource("3_kry3j")]
+[node name="StatisticsMenu" parent="HBoxContainer" unique_id=1399344487 instance=ExtResource("3_kry3j")]
 layout_mode = 2
 
-[connection signal="gui_input" from="ScrollContainer" to="." method="_on_scroll_container_gui_input"]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=157592854]
+anchor_mode = 0

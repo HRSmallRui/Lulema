@@ -14,6 +14,7 @@ config/name="Lulema"
 config/tags=PackedStringArray("git_project")
 run/main_scene="uid://cqa8brjeav0fr"
 config/features=PackedStringArray("4.7", "GL Compatibility")
+boot_splash/show_image=false
 config/icon="uid://b3etyeatw3day"
 
 [display]
@@ -24,6 +25,7 @@ window/size/window_width_override=640
 window/size/window_height_override=1200
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+window/handheld/orientation=1
 
 [file_customization]
 
