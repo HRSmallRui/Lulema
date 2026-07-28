@@ -12,6 +12,7 @@ config_version=5
 
 config/name="Lulema"
 config/tags=PackedStringArray("git_project")
+run/main_scene="uid://cqa8brjeav0fr"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="uid://b3etyeatw3day"
 
