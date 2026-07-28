@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cqa8brjeav0fr"]
 
 [ext_resource type="PackedScene" uid="uid://c7oj3s3pt4mws" path="res://Scenes/calendar_menu.tscn" id="1_8gbba"]
+[ext_resource type="Script" uid="uid://ju0hlgg0tq2j" path="res://Scripts/main.gd" id="1_jjvhh"]
 [ext_resource type="PackedScene" uid="uid://dul8abiefx5pf" path="res://Scenes/center_menu.tscn" id="2_jjvhh"]
 [ext_resource type="PackedScene" uid="uid://b76sxoylclxbl" path="res://Scenes/statistics_menu.tscn" id="3_kry3j"]
 
@@ -11,8 +12,19 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_jjvhh")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1866453354]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=348798943]
+layer = -1
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1866453354]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1221679569]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -20,23 +32,29 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=216818154]
+[node name="CalendarMenu" parent="HBoxContainer" unique_id=1579144087 instance=ExtResource("1_8gbba")]
+layout_mode = 2
+
+[node name="CenterMenu" parent="HBoxContainer" unique_id=534717266 instance=ExtResource("2_jjvhh")]
+layout_mode = 2
+
+[node name="StatisticsMenu" parent="HBoxContainer" unique_id=1399344487 instance=ExtResource("3_kry3j")]
+layout_mode = 2
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=157592854]
+anchor_mode = 0
+
+[node name="DebugLabel" type="Label" parent="." unique_id=1190380240]
+visible = false
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = 12
+anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = -125.0
 grow_horizontal = 2
-grow_vertical = 2
-horizontal_scroll_mode = 3
-
-[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer" unique_id=1599408977]
-layout_mode = 2
-
-[node name="CalendarMenu" parent="ScrollContainer/HBoxContainer" unique_id=1600915713 instance=ExtResource("1_8gbba")]
-layout_mode = 2
-
-[node name="CenterMenu" parent="ScrollContainer/HBoxContainer" unique_id=241613675 instance=ExtResource("2_jjvhh")]
-layout_mode = 2
-
-[node name="StatisticsMenu" parent="ScrollContainer/HBoxContainer" unique_id=567573133 instance=ExtResource("3_kry3j")]
-layout_mode = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 128
+text = "1"
+horizontal_alignment = 1

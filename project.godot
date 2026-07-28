@@ -14,14 +14,18 @@ config/name="Lulema"
 config/tags=PackedStringArray("git_project")
 run/main_scene="uid://cqa8brjeav0fr"
 config/features=PackedStringArray("4.7", "GL Compatibility")
+boot_splash/show_image=false
 config/icon="uid://b3etyeatw3day"
 
 [display]
 
 window/size/viewport_width=1280
 window/size/viewport_height=2400
+window/size/window_width_override=640
+window/size/window_height_override=1200
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+window/handheld/orientation=1
 
 [file_customization]
 
@@ -29,6 +33,18 @@ folder_colors={
 "res://Assets/": "green",
 "res://Scripts/": "gray"
 }
+
+[input]
+
+click={
+"deadzone": 0.2,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":0,"position":Vector2(0, 0),"global_position":Vector2(0, 0),"factor":1.0,"button_index":1,"canceled":false,"pressed":false,"double_click":false,"script":null)
+]
+}
+
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
 
 [physics]
 
