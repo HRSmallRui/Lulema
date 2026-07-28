@@ -1,10 +1,7 @@
 [gd_scene format=3 uid="uid://dul8abiefx5pf"]
 
+[ext_resource type="Script" uid="uid://cxogyxicibrac" path="res://Scripts/center_menu.gd" id="1_5tywr"]
 [ext_resource type="Texture2D" uid="uid://4golhcml2q8" path="res://Assets/Images/lulema_record.png" id="1_35u8f"]
-
-[sub_resource type="GDScript" id="GDScript_8gbba"]
-script/source = "extends Control
-"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_14cdr"]
 atlas = ExtResource("1_35u8f")
@@ -19,7 +16,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-script = SubResource("GDScript_8gbba")
+script = ExtResource("1_5tywr")
 
 [node name="Background" type="ColorRect" parent="." unique_id=901239165]
 layout_mode = 1

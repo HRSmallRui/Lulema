@@ -1,8 +1,6 @@
 [gd_scene format=3 uid="uid://c7oj3s3pt4mws"]
 
-[sub_resource type="GDScript" id="GDScript_35u8f"]
-script/source = "extends Control
-"
+[ext_resource type="Script" uid="uid://ifgw75v7xwuh" path="res://Scripts/calendar_menu.gd" id="1_4sim0"]
 
 [node name="CalendarMenu" type="Control" unique_id=1579144087]
 custom_minimum_size = Vector2(1280, 2400)
@@ -13,7 +11,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-script = SubResource("GDScript_35u8f")
+script = ExtResource("1_4sim0")
 
 [node name="Background" type="ColorRect" parent="." unique_id=1541140397]
 layout_mode = 1

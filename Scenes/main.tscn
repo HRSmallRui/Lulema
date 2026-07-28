@@ -1,12 +1,9 @@
 [gd_scene format=3 uid="uid://cqa8brjeav0fr"]
 
 [ext_resource type="PackedScene" uid="uid://c7oj3s3pt4mws" path="res://Scenes/calendar_menu.tscn" id="1_8gbba"]
+[ext_resource type="Script" uid="uid://ju0hlgg0tq2j" path="res://Scripts/main.gd" id="1_jjvhh"]
 [ext_resource type="PackedScene" uid="uid://dul8abiefx5pf" path="res://Scenes/center_menu.tscn" id="2_jjvhh"]
 [ext_resource type="PackedScene" uid="uid://b76sxoylclxbl" path="res://Scenes/statistics_menu.tscn" id="3_kry3j"]
-
-[sub_resource type="GDScript" id="GDScript_8gbba"]
-script/source = "extends Control
-"
 
 [node name="Main" type="Control" unique_id=185957830]
 layout_mode = 3
@@ -15,7 +12,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = SubResource("GDScript_8gbba")
+script = ExtResource("1_jjvhh")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1866453354]
 layout_mode = 1
