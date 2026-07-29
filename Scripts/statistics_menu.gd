@@ -201,7 +201,7 @@ func _draw_chart() -> void:
 			var x: float = left_margin + (float(i) / float(month_labels.size() - 1)) * plot_width
 			var label: Label = Label.new()
 			label.text = month_labels[i]
-			label.add_theme_font_size_override("font_size", 18)
+			label.add_theme_font_size_override("font_size", 24)
 			label.add_theme_color_override("font_color", Color(0.3, 0.3, 0.3))
 			label.position = Vector2(x - 20, chart_height - bottom_margin + 10)
 			chart_draw.add_child(label)
