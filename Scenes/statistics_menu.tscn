@@ -169,7 +169,8 @@ layout_mode = 2
 size_flags_vertical = 1
 theme_override_colors/font_color = Color(0.3, 0.3, 0.3, 1)
 theme_override_font_sizes/font_size = 40
-text = "本周打卡"
+text = "本周记录"
+vertical_alignment = 1
 
 [node name="ValueLabel" type="Label" parent="VBox/WeekCard/HBox" unique_id=794413715]
 layout_mode = 2

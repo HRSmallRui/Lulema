@@ -46,9 +46,9 @@ func _input(event: InputEvent) -> void:
 		if move_tween != null: move_tween.kill()
 		var mouse_velocity: Vector2 = get_local_mouse_position() - last_mouse_position
 		print(mouse_velocity.x)
-		if mouse_velocity.x > 50:
+		if mouse_velocity.x > 25:
 			current_id -= 1
-		elif mouse_velocity.x < -50:
+		elif mouse_velocity.x < -25:
 			current_id += 1
 		else:
 			var target_id: int = 0

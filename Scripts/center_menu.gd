@@ -41,6 +41,7 @@ func update_state():
 	
 	await get_tree().process_frame
 	CalendarMenu.instance.render_calendar()
+	StatisticsMenu.instance.update_statistics()
 	pass
 
 
