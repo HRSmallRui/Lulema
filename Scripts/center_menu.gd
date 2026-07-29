@@ -42,7 +42,6 @@ func update_state():
 	await get_tree().process_frame
 	CalendarMenu.instance.render_calendar()
 	StatisticsMenu.instance.update_statistics()
-	StatisticsMenu.instance._draw_chart()
 	pass
 
 
@@ -60,6 +59,7 @@ func _on_button_pressed() -> void:
 		sav.recorded_dates.append(today_struct)
 	AppSaver.save_app_saver(sav)
 	update_state()
+	StatisticsMenu.instance._draw_chart()
 	pass # Replace with function body.
 
 
