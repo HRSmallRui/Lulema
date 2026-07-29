@@ -1,4 +1,7 @@
 extends Control
+class_name MainUI
+
+static var instance: MainUI
 
 @export var back_color_list: Array[Color]
 
@@ -11,6 +14,12 @@ var current_id: int = 1
 var move_tween: Tween
 var color_tween: Tween
 var last_mouse_position: Vector2
+var is_draging: bool
+
+func _init() -> void:
+	instance = self
+	pass
+
 
 func _ready() -> void:
 	
@@ -57,6 +66,8 @@ func _input(event: InputEvent) -> void:
 		camera_2d.position.x -= event.screen_relative.x
 		if camera_2d.position.x < -1280 or camera_2d.position.x > 1280:
 			back()
+	
+	is_draging = event is InputEventScreenDrag
 	pass
 
 

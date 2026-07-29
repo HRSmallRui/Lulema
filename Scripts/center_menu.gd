@@ -12,7 +12,7 @@ var today_struct: DateStruct
 
 
 func _ready() -> void:
-	#background.hide()
+	background.hide()
 	sav = AppSaver.get_app_saver()
 	if sav == null:
 		sav = AppSaver.new()
@@ -40,6 +40,8 @@ func update_state():
 
 
 func _on_button_pressed() -> void:
+	if MainUI.instance.is_draging: return
+	
 	if sav.latest_date == null:
 		sav.latest_date = today_struct
 		sav.recorded_dates.append(today_struct)

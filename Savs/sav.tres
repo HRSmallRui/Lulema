@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/date_struct.gd" id="1_h0xii"]
 [ext_resource type="Script" path="res://Scripts/app_sav.gd" id="2_bjahp"]
 
-[sub_resource type="Resource" id="Resource_h0xii"]
+[sub_resource type="Resource" id="Resource_rkmf0"]
 script = ExtResource("1_h0xii")
 year = 2026
 month = 7
@@ -11,5 +11,5 @@ day = 29
 
 [resource]
 script = ExtResource("2_bjahp")
-latest_date = SubResource("Resource_h0xii")
-recorded_dates = Array[ExtResource("1_h0xii")]([SubResource("Resource_h0xii")])
+latest_date = SubResource("Resource_rkmf0")
+recorded_dates = Array[ExtResource("1_h0xii")]([SubResource("Resource_rkmf0")])
