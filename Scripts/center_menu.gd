@@ -34,6 +34,8 @@ func update_state():
 			status_label.text = "今日已记录"
 		else:
 			status_label.text = "今日尚未记录"
+	else:
+		status_label.text = "今日尚未记录"
 	
 	set_last_label_text()
 	pass
