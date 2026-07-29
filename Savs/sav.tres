@@ -1,13 +1,34 @@
-[gd_resource type="Resource" script_class="AppSaver" format=3]
+[gd_resource type="Resource" script_class="AppSaver" format=3 uid="uid://djwarfunv8xny"]
 
-[ext_resource type="Script" path="res://Scripts/date_struct.gd" id="1_h0xii"]
-[ext_resource type="Script" path="res://Scripts/app_sav.gd" id="2_bjahp"]
+[ext_resource type="Script" uid="uid://bgn5wotr7xidg" path="res://Scripts/date_struct.gd" id="1_h0xii"]
+[ext_resource type="Script" uid="uid://dk2w651pehmgv" path="res://Scripts/app_sav.gd" id="2_bjahp"]
 
 [sub_resource type="Resource" id="Resource_h0xii"]
 script = ExtResource("1_h0xii")
 year = 2026
 month = 7
 day = 29
+
+[sub_resource type="Resource" id="Resource_jjvhh"]
+script = ExtResource("1_h0xii")
+year = 2026
+month = 7
+day = 20
+metadata/_custom_type_script = "uid://bgn5wotr7xidg"
+
+[sub_resource type="Resource" id="Resource_rkmf0"]
+script = ExtResource("1_h0xii")
+year = 2026
+month = 7
+day = 21
+metadata/_custom_type_script = "uid://bgn5wotr7xidg"
+
+[sub_resource type="Resource" id="Resource_bjahp"]
+script = ExtResource("1_h0xii")
+year = 2026
+month = 7
+day = 22
+metadata/_custom_type_script = "uid://bgn5wotr7xidg"
 
 [sub_resource type="Resource" id="Resource_yxj4d"]
 script = ExtResource("1_h0xii")
@@ -16,7 +37,14 @@ month = 7
 day = 24
 metadata/_custom_type_script = "uid://bgn5wotr7xidg"
 
+[sub_resource type="Resource" id="Resource_4iam8"]
+script = ExtResource("1_h0xii")
+year = 2026
+month = 7
+day = 28
+metadata/_custom_type_script = "uid://bgn5wotr7xidg"
+
 [resource]
 script = ExtResource("2_bjahp")
 latest_date = SubResource("Resource_h0xii")
-recorded_dates = Array[ExtResource("1_h0xii")]([SubResource("Resource_yxj4d"), SubResource("Resource_h0xii")])
+recorded_dates = Array[ExtResource("1_h0xii")]([SubResource("Resource_jjvhh"), SubResource("Resource_rkmf0"), SubResource("Resource_bjahp"), SubResource("Resource_yxj4d"), SubResource("Resource_4iam8"), SubResource("Resource_h0xii")])

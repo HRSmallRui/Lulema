@@ -86,7 +86,9 @@ func _calc_longest_streak(records: Array[DateStruct]) -> int:
 	var longest: int = 1
 	var current: int = 1
 	for i: int in range(1, sorted.size()):
-		var diff: int = sorted[i - 1].days_to(sorted[i])
+		# ✅ 修正：用后一天减前一天，得到正数差值
+		var diff: int = sorted[i].days_to(sorted[i - 1])  # 相当于 sorted[i] - sorted[i-1]
+		# 或者直接用 -sorted[i-1].days_to(sorted[i])
 		if diff == 1:
 			current += 1
 			longest = max(longest, current)
@@ -98,14 +100,24 @@ func _calc_longest_streak(records: Array[DateStruct]) -> int:
 func _get_week_progress(today: Calendar.Date, records: Array[DateStruct]) -> int:
 	var weekday: int = today.get_weekday()  # 0=周日
 	var week_start: Calendar.Date = today.duplicate()
-	week_start.subtract_days(weekday)
+	week_start.subtract_days(weekday)  # 回到本周周日
 	
 	var count: int = 0
+	var counted_days: Array[Calendar.Date] = []  # 用于去重
 	for r: DateStruct in records:
 		var record_date: Calendar.Date = Calendar.Date.new(r.year, r.month, r.day)
-		var diff: int = week_start.days_to(record_date)
+		# ✅ 修正：用 record_date - week_start，得到正数差值（若 record_date 在 week_start 之后）
+		var diff: int = record_date.days_to(week_start)  # 即 record_date - week_start
 		if diff >= 0 and diff <= 6:
-			count += 1
+			# 去重：同一天只计一次
+			var already: bool = false
+			for d: Calendar.Date in counted_days:
+				if d.is_equal(record_date):
+					already = true
+					break
+			if not already:
+				count += 1
+				counted_days.append(record_date)
 	return count
 
 
