@@ -1,7 +1,7 @@
 extends Resource
 class_name AppSaver
 
-@export var max_days: int
+@export var latest_date: DateStruct
 @export var recorded_dates: Array[DateStruct]
 
 

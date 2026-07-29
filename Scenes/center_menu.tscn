@@ -3,10 +3,6 @@
 [ext_resource type="Script" uid="uid://cxogyxicibrac" path="res://Scripts/center_menu.gd" id="1_5tywr"]
 [ext_resource type="Texture2D" uid="uid://4golhcml2q8" path="res://Assets/Images/lulema_record.png" id="1_35u8f"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_14cdr"]
-atlas = ExtResource("1_35u8f")
-region = Rect2(190, 191, 1670, 1676)
-
 [node name="CenterMenu" type="Control" unique_id=534717266]
 custom_minimum_size = Vector2(1280, 2400)
 layout_mode = 3
@@ -63,18 +59,17 @@ layout_mode = 2
 size_flags_vertical = 3
 
 [node name="Button" type="Button" parent="VBox/CenterContainer" unique_id=881347614]
-self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(526, 526)
 layout_mode = 2
 focus_mode = 0
 flat = true
 
-[node name="TextureRect" type="TextureRect" parent="VBox/CenterContainer/Button" unique_id=16399404]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-scale = Vector2(0.31359664, 0.31359664)
-texture = SubResource("AtlasTexture_14cdr")
+[node name="ButtonSprite" type="Sprite2D" parent="VBox/CenterContainer/Button" unique_id=1544114672]
+position = Vector2(263, 263)
+scale = Vector2(0.32750183, 0.32750183)
+texture = ExtResource("1_35u8f")
+region_enabled = true
+region_rect = Rect2(190, 191, 1670, 1676)
 
 [node name="StatusLabel" type="Label" parent="VBox" unique_id=146724160]
 layout_mode = 2
@@ -87,11 +82,13 @@ horizontal_alignment = 1
 layout_mode = 2
 theme_override_colors/font_color = Color(0.5, 0.5, 0.5, 1)
 theme_override_font_sizes/font_size = 34
-text = "当前连续 0 天"
+text = "距离上次记录已过去0天"
 horizontal_alignment = 1
 
 [node name="BottomSpacer" type="Control" parent="VBox" unique_id=1190646046]
 custom_minimum_size = Vector2(0, 120)
 layout_mode = 2
 
+[connection signal="button_down" from="VBox/CenterContainer/Button" to="." method="_on_button_button_down"]
+[connection signal="button_up" from="VBox/CenterContainer/Button" to="." method="_on_button_button_up"]
 [connection signal="pressed" from="VBox/CenterContainer/Button" to="." method="_on_button_pressed"]
