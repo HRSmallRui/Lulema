@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c7oj3s3pt4mws"]
 
 [ext_resource type="Script" uid="uid://ifgw75v7xwuh" path="res://Scripts/calendar_menu.gd" id="1_4sim0"]
+[ext_resource type="PackedScene" uid="uid://bw05umierw7xd" path="res://Scenes/calendar_button.tscn" id="2_yxj4d"]
 
 [node name="CalendarMenu" type="Control" unique_id=1579144087]
 custom_minimum_size = Vector2(1280, 2400)
@@ -12,6 +13,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_4sim0")
+calendar_button_scene = ExtResource("2_yxj4d")
 
 [node name="Background" type="ColorRect" parent="." unique_id=1541140397]
 layout_mode = 1

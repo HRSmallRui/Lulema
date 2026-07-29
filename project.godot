@@ -17,6 +17,10 @@ config/features=PackedStringArray("4.7", "GL Compatibility")
 boot_splash/show_image=false
 config/icon="uid://b3etyeatw3day"
 
+[autoload]
+
+DataManager="*uid://bb5gqh0t6g8tn"
+
 [display]
 
 window/size/viewport_width=1280

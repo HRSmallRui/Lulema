@@ -38,6 +38,9 @@ func update_state():
 		status_label.text = "今日尚未记录"
 	
 	set_last_label_text()
+	
+	await get_tree().process_frame
+	CalendarMenu.instance.render_calendar()
 	pass
 
 
